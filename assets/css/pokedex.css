@@ -4,6 +4,39 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Esconde os detalhes extras inicialmente */
+    height: 110px;
+} 
+
+.pokemon:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra */
+    position: relative;
+    height: fit-content;
+    z-index: 3;
+}
+
+.pokemon .extra-details {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.pokemon:hover .extra-details {
+    max-height: 100px; /* Altura que acomoda os detalhes extras */
+    opacity: 1; /* Exibe os detalhes extras */
 }
 
 .normal {
